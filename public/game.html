@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRON Game</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div >
+        <div id="header">
+            <span id="ping">Ping</span>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <div id="log-box" class="container side-box">
+                <h1>Game log</h1>
+                <div id="log-content"></div>
+                <div id="chat-container">
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+            <div id='game-container'>
+                <canvas id="gameCanvas" class="container" width="1200" height="900"></canvas>
+            </div>
+            <div id="lobby-box" class="container side-box">
+                <h1>Lobby</h1>
+                <div id="lobby-content"></div>
+            </div>
+        </div>
+        <div id="actions">
+            <button id="startButton" class="tron-button">Ready</button>
+        </div>
+    </div>
+
+    <script src="../constants.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="../client.js"></script>
+</body>
+</html>

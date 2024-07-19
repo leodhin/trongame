@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room List</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+       
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const socket = io();
+
+            const roomListElement = document.getElementById("roomList");
+            const roomNameInput = document.getElementById("roomName");
+            const createRoomButton = document.getElementById("createRoom");
+            const nicknameInput = document.getElementById("nick");
+            const savedNick = localStorage.getItem('nickname');
+                if (savedNick) {
+                nicknameInput.value = savedNick;
+             }
+
+            socket.on("connect", () => {
+                console.log("Connected to the server");
+                socket.emit("requestRoomList");
+            });
+
+            socket.on("roomList", (games) => {
+                console.log("roomList", games);
+                roomListElement.innerHTML = "";
+                Array.from(games).forEach(room => {
+                    const row = document.createElement("tr");
+
+                    const roomNameCell = document.createElement("td");
+                    roomNameCell.textContent = room.name;
+                    row.appendChild(roomNameCell);
+
+                    const playersNumberCell = document.createElement("td");
+                    // Máximo numero de jugadores hardcodeado
+                    playersNumberCell.textContent = room.players+"/8";
+                    row.appendChild(playersNumberCell);
+                    
+                    const joinButtonCell = document.createElement("td");
+                    const joinButton = document.createElement("button");
+
+                    joinButton.textContent = "Join";
+                    joinButton.onclick = () => {
+                        const nickname = nicknameInput.value.trim();
+                        if (nickname) {
+                            localStorage.setItem('nickname', nickname);
+                        }
+                        window.location.href = `/game/${room.name}`;
+                    };
+                    joinButtonCell.appendChild(joinButton);
+                    row.appendChild(joinButtonCell);
+
+                    roomListElement.appendChild(row);
+                });
+            });
+
+            createRoomButton.onclick = () => {
+                const roomName = roomNameInput.value.trim();
+                if (roomName) {
+                    window.location.href = `/game/${roomName}`;
+                }
+            };
+        });
+    </script>
+</head>
+<body>
+    <header id="header">
+        <h1 id="main-title">TRON Game</h1>
+    </header>
+    <div id="nick-container">
+        <input id="nick" placeholder="Nick" maxlength="15" autofocus="autofocus">
+    </div>
+    <div id="main-container" class="container">
+       
+        <h1>Available Rooms</h1>
+        <input type="text" id="roomName" placeholder="Enter room name">
+        <button id="createRoom">Create Room</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Room Name</th>
+                    <th>Players</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="roomList">
+                <!-- Rooms will be listed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>by Miguel Angel Gata y Lorenzo Gamboa</footer>
+</body>
+</html>

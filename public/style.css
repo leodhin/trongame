@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 30px;
+}
+
+#main-container {
+    text-align: center;
+}
+
+#main-title {
+    font-size: 4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00FF00;
+    text-shadow: 0 0 20px #00FF00;
+}
+
+#header {
+    padding: 20px 0;
+}
+
+.side-box {
+    position: relative;
+    flex: 1;
+    width: 300px;
+    padding: 30px;
+    max-width: 300px;
+    overflow-y: auto; 
+    min-width: 150px;
+}
+
+#nick-container{
+    margin-bottom: 20px;   
+} 
+
+#chat-container {
+    position: absolute;
+    bottom: 0;
+}
+
+#game-log {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+canvas {
+    border: 1px solid #fff;
+    max-width: 100%;
+    max-height: 100%;
+    padding:0px !important;
+}
+
+#startButtonDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.tron-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0ff;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #0ff;
+    border-radius: 10px;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#ping {
+    top: 0;
+    right: 10px;
+    color: red;
+    margin-bottom: 20px;
+}
+
+
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00FF00;
+}
+
+#game-container {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    color: #00FF00;
+}
+
+th, td {
+    border: 1px solid #00FF00;
+    padding: 10px;
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+    background-color: black;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px #00FF00;
+    cursor: pointer;
+}
+
+button:hover, input:hover {
+    background-color: #00FF00;
+    color: black;
+}
+
+input::placeholder {
+    color: #00FF00;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
