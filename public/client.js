@@ -23,6 +23,7 @@ const joinRoomButton = document.getElementById('joinRoomBtn');
 const sendButton = document.getElementById('send-button');
 const chatInput = document.getElementById('chat-input');
 const startButton = document.getElementById('startButton');
+const logBox = document.getElementById("log-content");
 
 const PLAYER_SPEED = 10;
 const MAX_PLAYERS_PER_ROOM = 4;
@@ -256,11 +257,12 @@ function selectRoom(roomId, li) {
 }
 
 function addTextToLogBox(text, color) {
-    const logBox = document.getElementById("log-box");
+
     const newText = document.createElement("p");
     newText.textContent = text;
     newText.style.color = color || "white";
     logBox.appendChild(newText);
+    logBox.scrollTop = logBox.scrollHeight;
 }
 
 function addTextToHeader(text, color) {
