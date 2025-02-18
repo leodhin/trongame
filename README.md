@@ -1,46 +1,77 @@
-## TRON Game
+# 🕹️ TRON Game
 ![tron-gif](https://github.com/user-attachments/assets/fb2dd2b7-dc30-407e-922f-ac176b29902c)
 
-## Description
+Try it on http://tron-game.es/ ‼️
 
-This project is a replica of the famous TRON game, developed using JavaScript on both the client and server side. The game allows players to join different rooms and compete in an exciting real-time multiplayer game.
-It focuses on the study and analysis of latency in client-server environments, investigating how communication delays affect decision-making in distributed systems. Through simulations and experimental testing, the project aims to identify critical points where latency impacts performance, reliability, and user experience. The objective is to gain an in-depth understanding of how these delays can alter the flow of information and, consequently, the system's ability to react promptly, proposing mitigation and optimization strategies to improve the interaction between clients and servers.
+---
+This project is a replica of the classic **TRON** game, developed using JavaScript for both client and server sides. It offers an engaging real-time multiplayer experience where players can join various rooms and compete against each other.
 
-## Features
+The objective is to gain an in-depth understanding of how latency delays can alter the flow of information and, consequently, the system's ability to react promptly, proposing mitigation and optimization strategies to improve the interaction between clients and servers.
 
-- Real-time Multiplayer Gameplay**: Players can join rooms and compete against each other in real time.
-- Room System**: List of rooms available to join, with information about the number of players and maximum capacity.
-- Audio**: Background music and sound effects that stop when the game ends.
-- Nickname persistence**: Players can save their nickname in `localStorage` for use in future sessions.
+## 🚀 Features
 
-## Requirements
+- 🎮 **Real-Time Multiplayer**: Players can join different rooms and compete in real-time matches.
+- 🌐 **Client-Server Architecture**: Utilizes a robust client-server model to manage game state and player interactions.
+- 📉 **Latency Analysis**: Focuses on studying and analyzing latency in client-server environments to understand its impact on decision-making in distributed systems.
 
-- Node.js
-- npm (Node Package Manager)
+## 🛠️ Installation
 
-## Installation
+### Prerequisites
 
-1. Clone this repository:
-    ````bash
-    git clone https://github.com/tu-usuario/tron-game.git
-    ```
+Ensure you have **Node.js** installed on your system.
 
-2. Navigate to the project directory:
-    ````bash
-    cd tron-game
-    ```
+### Clone the Repository
 
-3. Install the dependencies:
-    ````bash
-    npm install
-    ```
+```sh
+git clone https://github.com/leodhin/trongame.git
+cd trongame
+```
 
-## Usage
+### Install Dependencies
 
-1. Start the server:
-    ````bash
-    node server.js
-    ```
+```sh
+npm install
+```
 
-2. Open your browser and navigate to `http://localhost:3000` to play.
-   Or just try it on http://tron-game.es/ !!
+## 🎯 Usage
+
+To start the game server, run:
+
+```sh
+node server.js
+```
+
+- Players can connect to the game by navigating to `http://localhost:3000` in their web browsers.
+- Use the on-screen interface to join or create game rooms and start playing.
+
+## 🧠 How It Works
+
+- The **server** (`server.js`) manages game state, player connections, and room assignments.
+- **Client-side** code handles rendering the game and capturing player inputs.
+- Communication between client and server is facilitated through WebSockets, enabling low-latency real-time interactions.
+- The project includes tools to simulate and measure latency, analyzing its effects on gameplay and decision-making.
+
+## 📂 Project Structure
+
+```
+├── server.js             # Main server script
+├── Game.js               # Game logic and mechanics
+├── Player.js             # Player class and related functionalities
+├── Room.js               # Room management for multiplayer sessions
+├── public/               # Client-side files (HTML, CSS, JS)
+├── constants.js          # Game constants and configurations
+├── gameSocketEvents.js   # WebSocket event handlers
+├── utils.js              # Utility functions
+├── package.json          # Project metadata and dependencies
+└── package-lock.json     # Dependency tree lock file
+```
+
+## 🏗️ Future Improvements
+
+- 🖥️ **Enhanced User Interface**: Improve the game's visual design and user experience.
+- 🌍 **Online Deployment**: Deploy the game on a cloud platform for wider accessibility.
+- 📊 **Advanced Latency Simulation**: Implement more sophisticated tools to simulate various network conditions and their impact on gameplay.
+
+## 📜 License
+
+This project is open-source and distributed under the **MIT License**.
