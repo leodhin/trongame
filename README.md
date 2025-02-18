@@ -4,6 +4,7 @@
 ## Description
 
 This project is a replica of the famous TRON game, developed using JavaScript on both the client and server side. The game allows players to join different rooms and compete in an exciting real-time multiplayer game.
+It focuses on the study and analysis of latency in client-server environments, investigating how communication delays affect decision-making in distributed systems. Through simulations and experimental testing, the project aims to identify critical points where latency impacts performance, reliability, and user experience. The objective is to gain an in-depth understanding of how these delays can alter the flow of information and, consequently, the system's ability to react promptly, proposing mitigation and optimization strategies to improve the interaction between clients and servers.
 
 ## Features
 
