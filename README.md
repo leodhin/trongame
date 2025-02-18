@@ -43,3 +43,4 @@ It focuses on the study and analysis of latency in client-server environments, i
     ```
 
 2. Open your browser and navigate to `http://localhost:3000` to play.
+   Or just try it on http://tron-game.es/ !!
